@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+void insertion_sort(int arr[],int n)
+{
+    int key,comp=0,shift=0;
+    for(int i=1;i<n;i++)
+    {
+        key=arr[i];
+        int j=i-1;
+        shift++;
+
+        while(j>=0 && arr[j]>key)
+        {
+            arr[j+1]=arr[j];
+            j--;
+            comp++;
+            shift++;
+        }
+        arr[j+1]=key;
+    }
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";;
+    cout<<"Comparision= "<<comp<<endl;
+    cout<<"Shift= "<<shift<<endl;
+}
+
+
+int main()
+{
+    int a;
+    cin>>a;
+    while(a--)
+    {
+        int n;
+        cin>>n;
+        int arr[n];
+        for(int i=0;i<n;i++)
+        cin>>arr[i];
+        insertion_sort(arr,n);
+    }
+    return 0;
+}
